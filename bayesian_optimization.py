@@ -12,7 +12,7 @@ def forrester(x: NDArray[float]) -> NDArray[float]:
     return (-1) * (6 * x - 2) ** 2 * np.sin(12 * x - 4)
 
 def expected_improvement(X: NDArray[float], pred_mean: NDArray[float], pred_var: NDArray[float], xi: float = 0.0) -> NDArray[float]:
-    return 0
+    return np.zeros(X.shape)
 
 def experiment_each_seed(seed: int, initial_num: int, max_iter: int):
     '''
