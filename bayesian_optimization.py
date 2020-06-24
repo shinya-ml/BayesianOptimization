@@ -54,7 +54,7 @@ def experiment_each_seed(seed: int, initial_num: int, max_iter: int):
     plt.plot(X.ravel(), pred_mean, "b", label="pred mean")
     plt.fill_between(X.ravel(), (pred_mean + 2 * np.sqrt(pred_var)).ravel(), (pred_mean - 2 * np.sqrt(pred_var)).ravel(), alpha=0.3, color="blue")
     plt.plot(X_train.ravel(), y_train, "ro", label="observation")
-    plt.legend(loc="upper right")
+    plt.legend(loc="lower left")
     plt.savefig(result_dir_path + "seed_"+str(seed)+"/predict_initial.pdf")
     plt.close()
 
@@ -83,7 +83,7 @@ def experiment_each_seed(seed: int, initial_num: int, max_iter: int):
         plt.plot(X.ravel(), pred_mean, "b", label="pred mean")
         plt.fill_between(X.ravel(), (pred_mean + 2 * np.sqrt(pred_var)).ravel(), (pred_mean - 2 * np.sqrt(pred_var)).ravel(), alpha=0.3, color="blue")
         plt.plot(X_train.ravel(), y_train, "ro", label="observation")
-        plt.legend(loc="upper right")
+        plt.legend(loc="lower left")
         plt.savefig(result_dir_path + "seed_"+str(seed)+"/predict_" + str(i) +".pdf")
         plt.close()
     np.savetxt(result_dir_path + "seed_" + str(seed) + "/simple_regret.csv", np.array(simple_regret_list), delimiter=",")
